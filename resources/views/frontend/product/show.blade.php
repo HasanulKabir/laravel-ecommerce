@@ -40,6 +40,23 @@
                                 <img src="{{ asset('img/no-img.png' ) }}" alt="{{ $product->name }}">
                             @endif
                         </div>
+
+                        <section id="demos" class="invisible">
+                            <div id="liveView" class="videoView">
+                              <div style="position: relative;">
+                                <video id="webcam" style="position: abso" autoplay playsinline></video>
+                                <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+                              </div>
+                              <div id="image-source" data-image-src="{{ asset('storage/images/products/'.$media->file_name) }}"></div>
+                              <button id="webcamButton" class="mdc-button mdc-button--raised">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">ENABLE WEBCAM</span>
+                              </button>
+                            </div>
+                            <div class="blend-shapes">
+                              <ul class="blend-shapes-list" id="video-blend-shapes"></ul>
+                            </div>
+                          </section>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-5 col-12">
